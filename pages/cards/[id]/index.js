@@ -32,7 +32,14 @@ export default function Card({ card }) {
     <div>
       <h2>{card.name}</h2>
       <div>
-        <img src={card.imageUrl} alt="" />
+        <img
+          src={
+            card.imageUrl
+              ? card.imageUrl
+              : "https://i.ibb.co/jwXGVPB/Capture-d-e-cran-2022-07-03-a-21-44-55.png"
+          }
+          alt=""
+        />
       </div>
     </div>
   );
