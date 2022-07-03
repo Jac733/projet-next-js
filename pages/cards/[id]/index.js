@@ -1,4 +1,5 @@
 import axios from "axios";
+import styles from "./card.module.css";
 
 export async function getStaticPaths() {
   const { data } = await axios.get(
@@ -29,10 +30,14 @@ export default function Card({ card }) {
   console.log(card);
 
   return (
-    <div>
-      <h2>{card.name}</h2>
-      <div>
+    <div className={styles.main}>
+      <a className={styles.link} href="../..">
+        Home
+      </a>
+      <h2 className={styles.title}>{card.name}</h2>
+      <div className={styles.container}>
         <img
+          className={styles.image}
           src={
             card.imageUrl
               ? card.imageUrl
@@ -40,6 +45,13 @@ export default function Card({ card }) {
           }
           alt=""
         />
+        <div className={styles.description}>
+          <p>
+            {card.type} ({card.rarity})
+          </p>
+          <p>{card.setName}</p>
+          <p>{card.text}</p>
+        </div>
       </div>
     </div>
   );

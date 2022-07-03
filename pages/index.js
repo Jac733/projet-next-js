@@ -17,7 +17,7 @@ export default function Home({ cards }) {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>Magic Compendium</h1>
-      <div className={styles.root}>
+      <div className={styles.container}>
         {cards.map(({ id, imageUrl }) => (
           <div key={id} className={styles.card}>
             <Link href={`/cards/${id}`}>
